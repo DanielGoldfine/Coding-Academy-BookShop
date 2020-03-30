@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body onload="onInit()">
+
+
+    <section class="bookshop-header">Welcome to My Bookshop</section>
+
+    <section class="main-contaier">
+        <section class="add-book-container">
+            <button onclick="toggleAddBook()">+</button>
+            <section class="add-book" hidden>
+                <select>
+                    <option value="litrature">Litrature</option>
+                    <option value="drama">Drama</option>
+                    <option value="comedy">Comedy</option>
+                    <option value="sci-fi">Sci-fi</option>
+                    <option value="horror">Horror</option>
+                </select>
+                <section class="input-container">
+                    Name: <input type="string" name="book-name">
+                    Price: <input type="number" name="price">
+                </section>
+                <button onclick="onSaveBook()">Save</button>
+            </section>
+        </section>
+    </section>
+    </section>
+
+    <section class="sort-container">
+        <h7>Sort By:</h7>
+        <select name="sort-by" onchange="onSortBy(this.value)">
+            <option value="name">Name</option>
+            <option value="genre">Genre</option>
+            <option value="price">Price</option>
+        </select>
+    </section>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="col-header">id</th>
+                <th class="col-header">Name</th>
+                <th class="col-header">Genre</th>
+                <th class="col-header">Price</th>
+                <th class="col-header" colspan="3">Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-container">
+        </tbody>
+    </table>
+
+    <section class="details-container">
+
+        <h2 class="details-book-name"></h2>
+        <span class="details-genre">Comedy</span>
+        <h3 class="close-details" onclick="onCloseDetails()">X</h3>
+        <p class="book-details"></p>
+        <section class="book-img"></section>
+        <section class="rating-contaier">
+            <span>Rate this book:</span>
+            <section class="choose-rating">
+                <button onclick="onChangeRating(-1)">-</button>
+                <h5 class="details-rating-value"></h5>
+                <button onclick="onChangeRating(+1)">+</button>
+            </section>
+        </section>
+
+    </section>
+
+    </section>
+
+
+
+    <script src="js/books_util.js"></script>
+    <script src="js/books_storage.js"></script>
+    <script src="js/bookshop_service.js"></script>
+    <script src="js/books_controller.js"></script>
+</body>
+
+</html>
